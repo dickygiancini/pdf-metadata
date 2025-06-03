@@ -1,0 +1,46 @@
+{
+  "name": "pdf-metadata-editor",
+  "productName": "PDF Metadata Editor v 1.2.0",
+  "version": "1.2.0",
+  "displayName": "Metadata Batch Processor",
+  "description": "Batch edit file metadata",
+  "main": "main.js",
+  "scripts": {
+    "start": "NODE_ENV=production || SET NODE_ENV=development && electron .",
+    "test": "NODE_ENV=development || SET NODE_ENV=production && electron .",
+    "reset-all": "rm -rf BatchMeta-win32-x64",
+    "clean": "rm -rf BatchMeta-win32-x64/resources/app",
+    "package": "asar pack BatchMeta-win32-x64/resources/app BatchMeta-win32-x64/resources/app.asar && npm run clean",
+    "build": "NODE_ENV=production || SET NODE_ENV=production && npm run reset-all && electron-packager . BatchMeta --platform=win32 --arch=x64 --ignore=node_modules/electron-* --icon=src/assets/icons/ICO/icon.ico"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drbrounsuga/pdfmetadata.git"
+  },
+  "keywords": [
+    "Electron",
+    "PDF",
+    "metadata"
+  ],
+  "author": "LaVaughn Haynes",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "asar": "^0.13.0",
+    "electron": "~1.6.2",
+    "electron-packager": "^8.7.2",
+    "electron-prebuilt": "^1.1.2",
+    "vue-devtools": "^3.1.2"
+  },
+  "dependencies": {
+    "csvtojson": "^1.1.5",
+    "exiftool": "^0.0.3",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "json2csv": "^3.7.3",
+    "node-exiftool": "^2.1.5",
+    "normalize.css": "^7.0.0",
+    "recursive-readdir": "^2.2.1",
+    "vue": "^2.3.3",
+    "electron": "36.3.2"
+  }
+}

@@ -1,0 +1,469 @@
+/*
+=================================
+Generic styles
+=================================
+*/
+@font-face {
+  font-family: "Open-sans";
+  src: url("assets/web-fonts/OpenSans-Regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open-sans";
+  src: url("assets/web-fonts/OpenSans-Bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+html,
+body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  font-family: Open-sans, sans-serif;
+}
+
+html{
+  background-color: #252526;
+}
+
+a,
+button{
+  outline: none;
+}
+
+.container{
+  position: relative;
+  height: 100%;
+}
+
+.button-hover{
+  transform: scale(1);
+  transition: transform 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.button-hover:hover{
+  transform: scale(1.15);
+}
+
+.next{
+  position: absolute;
+  left: 50%;
+  bottom: -32%;
+  transform: translateX(-50%);
+  color: #1D9E74;
+  background-color: transparent;
+  border: none;
+}
+
+.next:hover{
+  cursor: pointer;
+}
+
+.progress{
+  border: 1px solid #93B0B3;
+  padding: 1px;
+  width: 60%;
+  margin: 60px auto;
+}
+
+.progress-bar{
+  height: 6px;
+  width: 0%;
+  transition: width 500ms ease-in;
+  background-color: #1D9E74;
+}
+
+/*
+=================================
+helper styles
+=================================
+*/
+.hide{
+  display: none;
+}
+
+.center-center{
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.full-width{
+  width: 100%;
+}
+
+/*
+=================================
+Info bar
+=================================
+*/
+#info{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+  font-size: 1.1em;
+  background-color: #007ACC;
+  color: #fff;
+}
+
+.info .content{
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  list-style: none;
+}
+
+.info li{
+  display: inline-block;
+  border: none;
+  font-size: 0.85em;
+  padding: 5px 1.2em 7px;
+}
+
+.info li:hover{
+  background-color: #49A0DA;
+  cursor: default;
+}
+
+.info li:first-child{
+  margin-left: 1em;
+}
+
+.info i{
+  transform: translateY(10%);
+}
+
+.info .did-update{
+  /*color: '#FFCA28';*/
+  display: inline-block;
+  background-color: #B80000;
+  color: #fff;
+  border-radius: 25%;
+  padding: 3px 8px;
+}
+
+.info .will-update{
+  color: #FFCA28;
+}
+
+/*
+=================================
+Dropbox page
+=================================
+*/
+.drop-box{
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 250px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #383E4A;
+}
+
+.drop-box.hovered{
+  background-color: #fff;
+}
+
+.drop-box .help{
+  margin-top: 6px;
+  font-size: 18px;
+  color: #1D9E74;
+}
+
+.drop-box label{
+  font-size: 28px;
+}
+
+.drop-zone{
+  position: relative;
+  width: 580px;
+  height: 230px;
+  border: 2px dashed #93B0B3;
+  transform: scale(1);
+  transition: transform 300ms ease-in-out;
+}
+
+.hovered .drop-zone{
+  transform: scale(0.98);
+}
+
+.drop-info{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  width: 100%;
+  color: #93B0B3;
+  font-size: 20px;
+  text-align: center;
+  line-height: 25px;
+  font-weight: bold;
+}
+
+.file{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.chosen-file{
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #C8DADF;
+}
+
+.chosen-file strong{
+  color: #93B0B3;
+}
+
+.chosen-file div{
+  margin-top: 8px;
+  font-size: 18px;
+  color: #1D9E74;
+}
+
+/*
+=================================
+List styles
+=================================
+*/
+.row{
+  position: relative;
+  margin-top: 1px;
+  background-color: #383E4A;
+  padding: 10px;
+  font-size: 17px;
+}
+
+.row:hover{
+  background-color: #333;
+}
+
+.row ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.row li{
+  line-height: 1.5em;
+}
+
+.row .row-icon{
+  position: absolute;
+  top: -3px;
+  left: 15px;
+  color: #fff;
+}
+
+.row .row-icon.fa-file-pdf-o{
+  color: #E50A10;
+}
+
+.row ul{
+  padding-left: 70px;
+}
+
+.row a,
+.row{
+  color: #fff;
+}
+
+.row .fa-check{
+  position: absolute;
+  bottom: 110%;
+  left: 30px;
+  transform: translate(-45%, 50%) scale(0.6);
+  color: #1D9E74;
+  display: none;
+}
+
+.row.processed .fa-check{
+  display: inline-block;
+}
+
+.row.processed .row-icon.fa-file-pdf-o,
+.row.processed .row-icon{
+  color: #1D9E74;
+}
+
+.row.failed .row-icon.fa-file-pdf-o,
+.row.failed .row-icon{
+  color: #FFF;
+}
+
+/*
+=================================
+Toggle/detail styles
+=================================
+*/
+.toggle-details{
+  position: absolute;
+  top: -10px;
+  right: 15px;
+}
+
+.toggle-details:hover{
+  cursor: pointer;
+}
+
+.details{
+  padding-top: 20px;
+}
+
+/*
+=================================
+Preview Page
+=================================
+*/
+.preview-page{
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+.preview-page i{
+  margin: 20px 30px 0;
+  color: #1D9E74;
+  background-color: transparent;
+}
+
+/*
+=================================
+Import page
+=================================
+*/
+.import-page{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.import-page i{
+  margin: 20px auto 0;
+  color: #1D9E74;
+  background-color: transparent;
+}
+
+/*
+=================================
+Scrollbar/list
+=================================
+*/
+.scrollbar {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  bottom: 173px;
+  background-color: #222;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#scroll1::-webkit-scrollbar{
+  width: 10px;
+  background-color: #333;
+  border-left: 1px solid #222;
+} 
+
+#scroll1::-webkit-scrollbar-thumb{
+  background-color: #1D9E74;
+  border-left: 1px solid #222;
+}
+
+#scroll1::-webkit-scrollbar-thumb:hover{
+  background-color: #13694D;
+}
+
+.list {
+  min-height: 355px;
+}
+
+.list-menu{
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 45px;
+  height: 98px;
+  text-align: center;
+}
+
+.list-menu div{
+  padding: 0 10px 20px 10px;
+  font-size: 20px;
+  color: #C8DADF;
+}
+
+.list-menu i{
+  margin: 0 30px;
+  color: #1D9E74;
+  background-color: transparent;
+}
+
+.list-menu strong{
+  color: #1D9E74;
+}
+
+.file-path{
+  padding-right: 70px;
+}
+
+.file-name{
+  padding-right: 70px;
+}
+
+/*
+=================================
+Details flex tables
+=================================
+*/
+.sub-row{
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 7px 0 15px;
+}
+
+.left-half,
+.right-half{
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #1D9E74;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.left-half:hover,
+.right-half:hover{
+  background-color: #383E4A;
+}
